@@ -8,11 +8,11 @@ class Post(models.Model):
     creation_date = models.DateField(default=timezone.now())
     upvotes = models.IntegerField(default = 0)
     author_name = models.CharField(max_length = 30)
-    comments = models.ManyToManyField("comment")
 
 
 class Comment(models.Model):
     author_name  = models.CharField(max_length = 30)
     content = models.CharField(max_length = 200)
     creation_date = models.DateField(default=timezone.now())
+    post = models.ForeignKey("Post", on_delete = models.CASCADE)
 
