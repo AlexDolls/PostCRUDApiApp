@@ -22,13 +22,13 @@ And try to deploy again
 
 # Postman data - Documentation
 ##### Postman collection with requests for PostCRUDAPI App:
-https://github.com/AlexDolls/PostCRUDApiApp/blob/58d85c8f995a78b82b1a96ac3a6a2a59f84c0224/PostCRUDApp.postman_collection.json
+https://github.com/AlexDolls/PostCRUDApiApp/blob/3a37ad11244011773b8caf0a224601d5827a8d59/postcrudapi/postman_data/PostCRUDApp.postman_collection.json
 ###### Or get it via JSON link:
 https://www.getpostman.com/collections/36925b2d44dd0c006c29
 
 ##### Postman 'Deploy' environment with variables:
-https://github.com/AlexDolls/PostCRUDApiApp/blob/58d85c8f995a78b82b1a96ac3a6a2a59f84c0224/Deploy.postman_environment.json
+https://github.com/AlexDolls/PostCRUDApiApp/blob/3a37ad11244011773b8caf0a224601d5827a8d59/postcrudapi/postman_data/Deploy.postman_environment.json
 
 ##### Postman 'Develop' environment with variables:
-https://github.com/AlexDolls/PostCRUDApiApp/blob/58d85c8f995a78b82b1a96ac3a6a2a59f84c0224/Develop.postman_environment.json
+https://github.com/AlexDolls/PostCRUDApiApp/blob/3a37ad11244011773b8caf0a224601d5827a8d59/postcrudapi/postman_data/Develop.postman_environment.json
 
