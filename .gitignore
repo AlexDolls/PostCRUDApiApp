@@ -3,4 +3,4 @@ __pycache*
 *.pyc
 *.swp
 *.swo
-
+000*.py

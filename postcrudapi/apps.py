@@ -2,5 +2,5 @@ from django.apps import AppConfig
 
 
 class PostcrudapiConfig(AppConfig):
-    default_auto_field = 'django.db.models.BigAutoField'
-    name = 'postcrudapi'
+    default_auto_field = "django.db.models.BigAutoField"
+    name = "postcrudapi"
