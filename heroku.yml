@@ -1,0 +1,11 @@
+setup:
+  config:
+    env_file: .env.dev
+build:
+  docker:
+    web: Dockerfile
+release:
+  command:
+    - python3 manage.py runserver 0.0.0.0:8000
+  image: web
+
