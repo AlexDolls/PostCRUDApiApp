@@ -1,0 +1,315 @@
+{
+	"info": {
+		"_postman_id": "d4372389-3287-4714-9bc3-7a3ecf81280d",
+		"name": "PostCRUDApp",
+		"description": "API to manage Posts. Create, Read, Update, Delete (CRUD API)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Post Comments API",
+			"item": [
+				{
+					"name": "Comment Detail",
+					"item": [
+						{
+							"name": "Get Comment",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{API_URL}}/posts/comments/{{comment_id}}",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"posts",
+										"comments",
+										"{{comment_id}}"
+									]
+								},
+								"description": "Returns detail information about exact <strong>comment</strong>\n<ul>\n<em>Response data</em>\n<li><strong>pk</strong> - comment unique identifier</li>\n<li><strong>post</strong> - related post's unique indentifier</li>\n<li><strong>creation_date</strong> - date when post was created</li>\n<li><strong>author_name</strong> - name of post's author</li>\n</ul>"
+							},
+							"response": []
+						},
+						{
+							"name": "Update Comment",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "author_name",
+											"value": "{{comment_author}}",
+											"type": "text"
+										},
+										{
+											"key": "content",
+											"value": "{{comment_content}}",
+											"type": "text"
+										},
+										{
+											"key": "post",
+											"value": "{{post_id}}",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{API_URL}}/posts/comments/1",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"posts",
+										"comments",
+										"1"
+									]
+								},
+								"description": "Updates data of exact <strong>comment</strong>\n<ul>\n<em>Request body data</em>\n<li><strong>post</strong> - unique post's identifier</li>\n<li><strong>content</strong> - comment's content</li>\n<li><strong>author_name</strong> - comment's author name</li>\n</ul>"
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Comment",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{API_URL}}/posts/comments/{{comment_id}}",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"posts",
+										"comments",
+										"{{comment_id}}"
+									]
+								},
+								"description": "Deletes exact comment."
+							},
+							"response": []
+						}
+					],
+					"description": "<em><strong>API's requests that targets on exact comemnts.</strong></em>"
+				},
+				{
+					"name": "Get Comment List of Post",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{API_URL}}/posts/{{post_id}}/comments",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"posts",
+								"{{post_id}}",
+								"comments"
+							]
+						},
+						"description": "Gets all comments of specified post"
+					},
+					"response": []
+				},
+				{
+					"name": "Create Comment",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "author_name",
+									"value": "{{comment_author}}",
+									"type": "text"
+								},
+								{
+									"key": "content",
+									"value": "{{comment_content}}",
+									"type": "text"
+								},
+								{
+									"key": "post",
+									"value": "{{post_id}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{API_URL}}/posts/comments/create",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"posts",
+								"comments",
+								"create"
+							]
+						},
+						"description": "Creates <strong>comment</strong> with given data.\n<ul>\n<em>Request body data</em>\n<li><strong>post</strong> - unique post's identifier</li>\n<li><strong>content</strong> - comment's content</li>\n<li><strong>author_name</strong> - comment's author name</li>\n</ul>"
+					},
+					"response": []
+				}
+			],
+			"description": "CRUD API for comments on posts."
+		},
+		{
+			"name": "Post Detail",
+			"item": [
+				{
+					"name": "Get Post Detail",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{API_URL}}/posts/{{post_id}}",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"posts",
+								"{{post_id}}"
+							]
+						},
+						"description": "Returns detail information about exact <strong>post</strong>.\n<ul>\n<em>Response data</em>\n<li><strong>pk</strong> - post unique identifier</li>\n<li><strong>link</strong> - link on post</li>\n<li><strong>creation_date</strong> - date when post was created</li>\n<li><strong>upvotes</strong> - count of votes on post</li>\n<li><strong>author_name</strong> - name of post's author</li>\n</ul>"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Post",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "{{post_title}}",
+									"type": "text"
+								},
+								{
+									"key": "author_name",
+									"value": "{{post_author}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{API_URL}}/posts/{{post_id}}",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"posts",
+								"{{post_id}}"
+							]
+						},
+						"description": "Updates data in exact <strong>post</strong>.\n<ul>\n<em>Request body data</em>\n<li><strong>title</strong> - date when post was created</li>\n<li><strong>author_name</strong> - name of post's author</li>\n</ul>"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Post",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{API_URL}}/posts/{{post_id}}",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"posts",
+								"{{post_id}}"
+							]
+						},
+						"description": "Deletes exact <strong>post</strong>."
+					},
+					"response": []
+				}
+			],
+			"description": "API's requests that targets on exact <strong>post</strong>."
+		},
+		{
+			"name": "Upvote Post",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "{{API_URL}}/posts/{{post_id}}/upvote",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"posts",
+						"{{post_id}}",
+						"upvote"
+					]
+				},
+				"description": "Upvotes for exact <strong>post</strong>.\nJust increasing Upvotes count on post."
+			},
+			"response": []
+		},
+		{
+			"name": "Get Post List",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{API_URL}}/posts",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"posts"
+					]
+				},
+				"description": "Returns all existing <strong>posts</strong>."
+			},
+			"response": []
+		},
+		{
+			"name": "Create Post",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "title",
+							"value": "{{post_title}}",
+							"type": "text"
+						},
+						{
+							"key": "author_name",
+							"value": "{{post_author}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{API_URL}}/posts",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"posts"
+					]
+				},
+				"description": "Creates <strong>post</strong> with given data.\n<ul>\n<em>Request body data</em>\n<li><strong>title</strong> - date when post was created</li>\n<li><strong>author_name</strong> - name of post's author</li>\n</ul>"
+			},
+			"response": []
+		}
+	]
+}
